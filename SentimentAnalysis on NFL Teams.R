@@ -10,13 +10,13 @@ library(RCurl)
 requestURL <- "https://api.twitter.com/oauth/request_token"
 accessURL <- "https://api.twitter.com/oauth/access_token"
 authURL <- "https://api.twitter.com/oauth/authorize"
-consumerKey <- "C97VucQqe3HcfS3v14bNguv60"
-consumerSecret <- "6GTBqOEGZdPfMerMf0Dq35qZBrhQhgMO9cGBuywFzD9VXRH7XJ"
+consumerKey <- "C97VucQqe3HcfS3guv60"
+consumerSecret <- "6GTBqOEGZdPfMerMf35qZBrhQhGBuywFzD9VXRH7XJ"
 my_oauth <- OAuthFactory$new(consumerKey=consumerKey, consumerSecret=consumerSecret, requestURL=requestURL, accessURL=accessURL, authURL=authURL)
 my_oauth$handshake(cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))
 save(my_oauth, file="twitter authentication.Rdata")
-accessToken= '570658467-UH9q200QT08WkV9tayfvlS64QQ5euE9JETChNf40'
-accessSecret= 'hRqyuexn2lD2DFuCuuI6kdtJPGiDVqYOzPvQb5q9Qeh64'
+accessToken= '570658467-UH9q200QT08WkV9tayfvlS64QQ5euE9'
+accessSecret= 'hRqyuexn2lD2DFuCGiDVqYOzPvQb5q9Qeh64'
 setup_twitter_oauth(consumer_key=consumerKey, consumer_secret=consumerSecret,access_token=accessToken, access_secret=accessSecretssSecret)
 library(twitteR)
 library(ROAuth)
@@ -157,7 +157,7 @@ return(score)
 scores.df = data.frame(score=scores, text=sentences)
 return(scores.df)
 }
-#Score to each team’s tweet recorded
+#Score to each teamÂ’s tweet recorded
 broncos.scores <- score.sentiment(broncos.text, pos.words,neg.words, .progress='text')
 cardinals.scores <- score.sentiment(cardinals.text, pos.words,neg.words, .progress='text')
 falcons.scores <- score.sentiment(falcons.text, pos.words,neg.words, .progress='text')
@@ -270,7 +270,7 @@ labs(title="Sentiment Analysis of FIve NFL Teams")
 tweets <- searchTwitter("#Rockies", n=1499,lang="en")
 tweets.text <- sapply(tweets, function(x) x$getText()) #Fetch the text of the Tweets
 tweets.text <- gsub("rt", "", tweets.text) # First we will remove retweet entities from the stored tweets
-tweets.text <- gsub("@\\w+", "", tweets.text) #remove all “@people”
+tweets.text <- gsub("@\\w+", "", tweets.text) #remove all Â“@peopleÂ”
 tweets.text <- gsub("[[:punct:]]", "", tweets.text) #remove all the punctuation
 tweets.text <- gsub("http\\w+", "", tweets.text) #remove html links, which are not required for sentiment analysis
 tweets.text <- gsub("[ |\t]{2,}", "", tweets.text) #remove unnecessary spaces (white spaces, tabs etc)
