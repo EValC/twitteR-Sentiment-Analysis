@@ -10,10 +10,10 @@ Cannot get 100% efficiency in analysing sentiment of tweets.
 Giving a hastag under the wrong category will still give results.
 
 PreRequisites:
-.install R
+.install R.
 .In order to extract tweets, you  will need a twitter application and hence a twitter account, if not sign up.
 .User your twitter login ID and password to sign in at Twitter Developers.
-.Create an Application to get  Authorization details
+.Create an Application to get  Authorization details.
 
 Steps to Perform Sentiment Analysis:
 .Setting Up Twitter
