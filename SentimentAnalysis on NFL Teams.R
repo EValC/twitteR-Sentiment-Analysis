@@ -27,7 +27,7 @@ library(tm)
 library(wordcloud)
 library(RColorBrewer)
 #Scraping twitter Data in to a file
-filterStream( file.name="team.json", track="MLB", tweets=1000, oauth=my_oauth)
+filterStream( file.name="team.json", track="NFL", tweets=1000, oauth=my_oauth)
 #searchTwitter - This function will issue a search of Twitter based on a supplied search string.
 broncos.tweets <- searchTwitter('#Broncos', n=2000, lang="en")
 cardinals.tweets <- searchTwitter('#BeRedSeeRed', n=2000, lang="en")
@@ -265,9 +265,9 @@ ggplot(data=t.scores) +
 geom_bar(mapping=aes(x=score, fill=team), binwidth=1) +
 facet_grid(team~.) +
 theme_bw() + scale_color_brewer() +
-labs(title="Sentiment Analysis of FIve NFL Teams")
+labs(title="Sentiment Analysis of all NFL Teams")
 #Create Wordcloud
-tweets <- searchTwitter("#Rockies", n=1499,lang="en")
+tweets <- searchTwitter("#Broncos", n=1499,lang="en")
 tweets.text <- sapply(tweets, function(x) x$getText()) #Fetch the text of the Tweets
 tweets.text <- gsub("rt", "", tweets.text) # First we will remove retweet entities from the stored tweets
 tweets.text <- gsub("@\\w+", "", tweets.text) #remove all @people
